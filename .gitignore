@@ -12,3 +12,5 @@ Saved
 *.suo
 *.xcodeproj
 *.xcworkspace
+Source/Miaunglishv1/Detector.cpp
+Source/Miaunglishv1/Detector.h
