@@ -22,9 +22,9 @@ AMiaunglishv1Character::AMiaunglishv1Character()
 	BaseLookUpRate = 45.f;
 
 	// Don't rotate when the controller rotates. Let that just affect the camera.
-	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
-	bUseControllerRotationRoll = false;
+	bUseControllerRotationPitch = true;
+	bUseControllerRotationYaw = true;
+	bUseControllerRotationRoll = true;
 
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input...	
@@ -99,6 +99,7 @@ void AMiaunglishv1Character::TurnAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
+	//GetOwner()->SetActorRotation(FRotator(0.f, 0.f, Rate));
 }
 
 void AMiaunglishv1Character::LookUpAtRate(float Rate)
