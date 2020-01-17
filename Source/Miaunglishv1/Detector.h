@@ -24,5 +24,5 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 private:
-	float alcance = 2700.f;
+	float alcance = 400.f;
 };

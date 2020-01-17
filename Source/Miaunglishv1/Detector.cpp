@@ -61,6 +61,21 @@ void UDetector::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 		0.f,
 		10.f
 	);
+	//Crear parametros de busqueda 
+	FCollisionQueryParams ParametrosBusqueda(FName(TEXT("")), false, GetOwner());
+	FHitResult Hit;
+	GetWorld()->LineTraceSingleByObjectType(
+		OUT Hit,
+		MarvinViewpointLocation,
+		FinalDeLinea,
+		FCollisionObjectQueryParams(ECollisionChannel::ECC_PhysicsBody),
+		ParametrosBusqueda
+	);
 // ver con lo que colisionamos
+	AActor * actorQueGolpea = Hit.GetActor();
+	if (actorQueGolpea) {
+		UE_LOG(LogTemp, Warning, TEXT("%s"), *(actorQueGolpea->GetName()))
+
+	}
 }
 
